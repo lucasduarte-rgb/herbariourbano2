@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo de plantas para apartamento com filtros por luz e dificuldade.">
+  <title>Catálogo | Herbário Urbano</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="cabecalho">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a href="index.html" class="logo">
+        <img src="img/logo.svg" alt="" width="36" height="36">
+        Herbário Urbano
+      </a>
+      <ul class="nav-lista" id="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="plantas.html" class="ativo" aria-current="page">Catálogo</a></li>
+          <li><a href="cuidados.html">Cuidados</a></li>
+          <li><a href="contato.html">Contato</a></li>
+      </ul>
+      <div class="nav-acoes">
+        <button class="botao-icone tema-toggle" type="button" aria-label="Ativar tema escuro">🌙</button>
+        <button class="botao-icone menu-toggle" type="button" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="pagina-topo container">
+      <span class="etiqueta">Catálogo</span>
+      <h1>Encontre a planta ideal</h1>
+      <p>Busque pelo nome, filtre pela luz do seu cômodo e salve suas favoritas. Clique em “Ver cuidados” para mais detalhes.</p>
+    </section>
+
+    <section class="container" aria-label="Catálogo de plantas">
+      <div class="filtros">
+        <div class="campo" style="margin:0;flex:1;min-width:220px">
+          <label for="busca" class="sr-only">Buscar planta</label>
+          <input type="search" id="busca" placeholder="🔍 Buscar por nome ou nome científico...">
+        </div>
+        <div class="grupo-filtros" role="group" aria-label="Filtrar por luminosidade">
+          <button class="filtro ativo" type="button" data-luz="todas" aria-pressed="true">Todas</button>
+          <button class="filtro" type="button" data-luz="sol" aria-pressed="false">☀️ Sol</button>
+          <button class="filtro" type="button" data-luz="meia-sombra" aria-pressed="false">⛅ Meia-sombra</button>
+          <button class="filtro" type="button" data-luz="sombra" aria-pressed="false">🌥️ Sombra</button>
+        </div>
+      </div>
+
+      <div class="filtros-extra">
+        <label for="dificuldade">Dificuldade:
+          <select id="dificuldade">
+            <option value="todas">Todas</option>
+            <option value="facil">Fácil</option>
+            <option value="media">Média</option>
+            <option value="dificil">Difícil</option>
+          </select>
+        </label>
+        <label><input type="checkbox" id="pets"> 🐾 Só pet friendly</label>
+        <label><input type="checkbox" id="so-favoritos"> ❤️ Só favoritas</label>
+      </div>
+
+      <p class="resultado-contagem" id="contagem" aria-live="polite"></p>
+      <div class="grade-cards" id="grade-plantas">
+        <noscript><p>Ative o JavaScript para ver o catálogo.</p></noscript>
+      </div>
+    </section>
+
+    <!-- Modal de detalhes (preenchido pelo JavaScript) -->
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" aria-hidden="true">
+      <div class="modal-conteudo">
+        <div class="modal-imagem">
+          <img id="modal-img" src="img/jiboia.svg" alt="">
+        </div>
+        <div class="modal-texto">
+          <button class="botao-icone modal-fechar" type="button" aria-label="Fechar detalhes">✕</button>
+          <h2 id="modal-titulo">Planta</h2>
+          <p class="nome-cientifico" id="modal-cientifico"></p>
+          <p id="modal-descricao"></p>
+          <ul id="modal-lista"></ul>
+          <p class="aviso" id="modal-dica"></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape-grade">
+        <section>
+          <h3>🌿 Herbário Urbano</h3>
+          <p>Um guia para quem quer transformar o apartamento em um pedacinho de floresta — mesmo sem quintal e sem muito tempo.</p>
+        </section>
+        <nav aria-label="Links do rodapé">
+          <h3>Navegue</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="plantas.html">Catálogo de plantas</a></li>
+            <li><a href="cuidados.html">Guia de cuidados</a></li>
+            <li><a href="contato.html">Contato e dúvidas</a></li>
+          </ul>
+        </nav>
+        <section>
+          <h3>Trabalho prático</h3>
+          <ul>
+            <li>Desenvolvimento Web</li>
+            <li>HTML · CSS · JavaScript</li>
+            <li>Dupla: Lucas Lima e PH</li>
+          </ul>
+        </section>
+      </div>
+      <p class="rodape-base">© <span id="ano-atual">2026</span> Herbário Urbano · Projeto acadêmico sem fins comerciais.</p>
+    </div>
+  </footer>
+
+  <button class="botao-icone voltar-topo" type="button" aria-label="Voltar ao topo">↑</button>
+
+  <script src="js/dados.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/plantas.js"></script>
+</body>
+</html>

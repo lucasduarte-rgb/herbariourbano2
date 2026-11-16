@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Entre em contato e tire suas dúvidas sobre plantas.">
+  <title>Contato | Herbário Urbano</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="cabecalho">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a href="index.html" class="logo">
+        <img src="img/logo.svg" alt="" width="36" height="36">
+        Herbário Urbano
+      </a>
+      <ul class="nav-lista" id="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="plantas.html">Catálogo</a></li>
+          <li><a href="cuidados.html">Cuidados</a></li>
+          <li><a href="contato.html" class="ativo" aria-current="page">Contato</a></li>
+      </ul>
+      <div class="nav-acoes">
+        <button class="botao-icone tema-toggle" type="button" aria-label="Ativar tema escuro">🌙</button>
+        <button class="botao-icone menu-toggle" type="button" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="pagina-topo container">
+      <span class="etiqueta">Fale com a gente</span>
+      <h1>Contato e dúvidas</h1>
+      <p>Sua planta está triste? Quer sugerir uma espécie para o catálogo? Mande uma mensagem ou confira as perguntas frequentes.</p>
+    </section>
+
+    <section class="secao" style="padding-top:1rem">
+      <div class="container duas-colunas">
+        <div class="form-card">
+          <form id="form-contato" novalidate>
+            <div class="campo">
+              <label for="nome">Nome completo *</label>
+              <input type="text" id="nome" name="nome" autocomplete="name" placeholder="Ex.: Ana Souza">
+              <span class="msg-erro" aria-live="polite"></span>
+            </div>
+
+            <div class="campo">
+              <label for="email">E-mail *</label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="nome@exemplo.com">
+              <span class="msg-erro" aria-live="polite"></span>
+            </div>
+
+            <div class="campo">
+              <label for="telefone">Telefone (opcional)</label>
+              <input type="tel" id="telefone" name="telefone" autocomplete="tel" placeholder="(11) 98765-4321">
+              <span class="msg-erro" aria-live="polite"></span>
+            </div>
+
+            <div class="campo">
+              <label for="assunto">Assunto *</label>
+              <select id="assunto" name="assunto">
+                <option value="">Selecione...</option>
+                <option value="ajuda">Preciso de ajuda com uma planta</option>
+                <option value="sugestao">Sugerir planta para o catálogo</option>
+                <option value="elogio">Elogio ou crítica</option>
+                <option value="outro">Outro assunto</option>
+              </select>
+              <span class="msg-erro" aria-live="polite"></span>
+            </div>
+
+            <div class="campo">
+              <label for="mensagem">Mensagem *</label>
+              <textarea id="mensagem" name="mensagem" maxlength="500" placeholder="Conte o que está acontecendo..."></textarea>
+              <span class="contador" id="contador">0 / 500 caracteres</span>
+              <span class="msg-erro" aria-live="polite"></span>
+            </div>
+
+            <div class="campo">
+              <div class="checkbox">
+                <input type="checkbox" id="termos" name="termos">
+                <label for="termos">Concordo que meus dados sejam usados apenas para responder esta mensagem.</label>
+              </div>
+              <span class="msg-erro" aria-live="polite"></span>
+            </div>
+
+            <button class="botao" type="submit">Enviar mensagem</button>
+          </form>
+
+          <div class="sucesso-envio" id="sucesso-envio" tabindex="-1" aria-live="polite">
+            <h2>Mensagem enviada! 🌱</h2>
+            <p>Obrigado, <strong id="sucesso-nome"></strong>! Responderemos em breve. Confira o que recebemos:</p>
+            <dl></dl>
+            <button class="botao botao-secundario" type="button" id="nova-mensagem">Enviar outra mensagem</button>
+          </div>
+        </div>
+
+        <aside>
+          <span class="etiqueta">Perguntas frequentes</span>
+          <h2>FAQ</h2>
+          <div class="faq">
+            <div class="faq-item">
+              <button class="faq-pergunta" type="button" aria-expanded="false">Qual a planta mais fácil para iniciantes?<span aria-hidden="true">+</span></button>
+              <div class="faq-resposta"><p>A espada-de-são-jorge e a zamioculca: aguentam pouca luz e esquecimentos na rega. Veja mais no <a href="plantas.html">catálogo</a>.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-pergunta" type="button" aria-expanded="false">Como sei se preciso regar?<span aria-hidden="true">+</span></button>
+              <div class="faq-resposta"><p>Enfie o dedo uns 2 cm no substrato. Se sair seco, regue; se sair úmido, espere. A <a href="cuidados.html#calculadora">calculadora</a> ajuda a criar uma rotina.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-pergunta" type="button" aria-expanded="false">Tenho gato. Quais plantas são seguras?<span aria-hidden="true">+</span></button>
+              <div class="faq-resposta"><p>No catálogo, marque o filtro “Só pet friendly”. Samambaia, calathea e echevéria são boas opções.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-pergunta" type="button" aria-expanded="false">Posso usar vaso sem furo?<span aria-hidden="true">+</span></button>
+              <div class="faq-resposta"><p>Use como cachepô: deixe a planta num vaso plástico furado dentro dele e retire a água acumulada após a rega.</p></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape-grade">
+        <section>
+          <h3>🌿 Herbário Urbano</h3>
+          <p>Um guia para quem quer transformar o apartamento em um pedacinho de floresta — mesmo sem quintal e sem muito tempo.</p>
+        </section>
+        <nav aria-label="Links do rodapé">
+          <h3>Navegue</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="plantas.html">Catálogo de plantas</a></li>
+            <li><a href="cuidados.html">Guia de cuidados</a></li>
+            <li><a href="contato.html">Contato e dúvidas</a></li>
+          </ul>
+        </nav>
+        <section>
+          <h3>Trabalho prático</h3>
+          <ul>
+            <li>Desenvolvimento Web</li>
+            <li>HTML · CSS · JavaScript</li>
+            <li>Dupla: Lucas Lima e PH</li>
+          </ul>
+        </section>
+      </div>
+      <p class="rodape-base">© <span id="ano-atual">2026</span> Herbário Urbano · Projeto acadêmico sem fins comerciais.</p>
+    </div>
+  </footer>
+
+  <button class="botao-icone voltar-topo" type="button" aria-label="Voltar ao topo">↑</button>
+
+  <script src="js/dados.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/contato.js"></script>
+</body>
+</html>

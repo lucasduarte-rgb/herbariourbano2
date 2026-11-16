@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guia de cuidados com plantas e calculadora de rega.">
+  <title>Cuidados | Herbário Urbano</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="cabecalho">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a href="index.html" class="logo">
+        <img src="img/logo.svg" alt="" width="36" height="36">
+        Herbário Urbano
+      </a>
+      <ul class="nav-lista" id="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="plantas.html">Catálogo</a></li>
+          <li><a href="cuidados.html" class="ativo" aria-current="page">Cuidados</a></li>
+          <li><a href="contato.html">Contato</a></li>
+      </ul>
+      <div class="nav-acoes">
+        <button class="botao-icone tema-toggle" type="button" aria-label="Ativar tema escuro">🌙</button>
+        <button class="botao-icone menu-toggle" type="button" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="pagina-topo container">
+      <span class="etiqueta">Guia de cuidados</span>
+      <h1>Rega, luz e adubo sem mistério</h1>
+      <p>Cada estação pede um cuidado diferente. Consulte a tabela, aprenda a trocar de vaso e use a calculadora para criar sua rotina.</p>
+    </section>
+
+    <section class="secao" style="padding-top:1rem">
+      <div class="container">
+        <div class="tabela-wrapper revelar">
+          <table>
+            <caption>Cuidados ao longo do ano (hemisfério sul)</caption>
+            <thead>
+              <tr>
+                <th scope="col">Estação</th>
+                <th scope="col">Rega</th>
+                <th scope="col">Adubação</th>
+                <th scope="col">Atenção especial</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">☀️ Verão</th>
+                <td>Mais frequente</td>
+                <td>A cada 30 dias</td>
+                <td>Evite sol forte do meio-dia nas folhagens</td>
+              </tr>
+              <tr>
+                <th scope="row">🍂 Outono</th>
+                <td>Moderada</td>
+                <td>A cada 45 dias</td>
+                <td>Remova folhas secas e amareladas</td>
+              </tr>
+              <tr>
+                <th scope="row">❄️ Inverno</th>
+                <td>Bem espaçada</td>
+                <td>Suspender</td>
+                <td>Afaste do vento frio e do aquecedor</td>
+              </tr>
+              <tr>
+                <th scope="row">🌸 Primavera</th>
+                <td>Moderada a frequente</td>
+                <td>A cada 30 dias</td>
+                <td>Melhor época para podar e trocar de vaso</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" style="padding-top:0">
+      <div class="container duas-colunas">
+        <article class="revelar">
+          <span class="etiqueta">Passo a passo</span>
+          <h2>Como trocar de vaso</h2>
+          <p>Raízes saindo pelo furo do vaso? É hora da mudança. Faça na primavera:</p>
+          <ol class="lista-passos" style="margin-top:1.25rem">
+            <li><p>Escolha um vaso <strong>2 a 4 cm maior</strong> e com furos de drenagem.</p></li>
+            <li><p>Coloque uma camada de argila expandida ou pedriscos no fundo.</p></li>
+            <li><p>Retire a planta com cuidado e solte levemente as raízes.</p></li>
+            <li><p>Complete com substrato novo, sem apertar demais.</p></li>
+            <li><p>Regue bem e deixe à meia-sombra por uma semana.</p></li>
+          </ol>
+        </article>
+
+        <article class="revelar">
+          <span class="etiqueta">Sinais de alerta</span>
+          <h2>O que a planta está dizendo?</h2>
+          <ul class="grade-cards" style="list-style:none;grid-template-columns:1fr;margin-top:1.25rem">
+            <li class="card"><h3>🟡 Folhas amarelas e moles</h3><p>Excesso de água. Espace as regas e confira a drenagem.</p></li>
+            <li class="card"><h3>🟤 Pontas secas e marrons</h3><p>Ar seco ou água com muito cloro. Borrife as folhas.</p></li>
+            <li class="card"><h3>🌿 Caules longos e finos</h3><p>Falta de luz. Aproxime a planta de uma janela.</p></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="secao" id="calculadora" style="padding-top:0">
+      <div class="container duas-colunas">
+        <div class="revelar">
+          <span class="etiqueta">Ferramenta</span>
+          <h2>Calculadora de rega 💧</h2>
+          <p>Escolha a planta, o tamanho do vaso e a estação. Calculamos de quantos em quantos dias regar, quanta água usar e a data da próxima rega.</p>
+          <p style="margin-top:1rem">Os valores são uma referência: sempre confira com o dedo se o substrato está seco antes de regar.</p>
+        </div>
+
+        <form class="calculadora" id="form-calculadora" novalidate>
+          <div class="campo">
+            <label for="calc-planta">Planta</label>
+            <select id="calc-planta" required>
+              <option value="">Selecione...</option>
+            </select>
+          </div>
+
+          <fieldset class="campo" style="border:none">
+            <legend style="font-weight:600;margin-bottom:.4rem">Tamanho do vaso</legend>
+            <div class="grupo-filtros">
+              <label class="filtro"><input type="radio" name="vaso" value="pequeno"> Pequeno</label>
+              <label class="filtro"><input type="radio" name="vaso" value="medio" checked> Médio</label>
+              <label class="filtro"><input type="radio" name="vaso" value="grande"> Grande</label>
+            </div>
+          </fieldset>
+
+          <div class="campo">
+            <label for="calc-estacao">Estação</label>
+            <select id="calc-estacao">
+              <option value="verao">Verão</option>
+              <option value="outono">Outono</option>
+              <option value="inverno">Inverno</option>
+              <option value="primavera">Primavera</option>
+            </select>
+          </div>
+
+          <p class="msg-erro" id="calc-erro" role="alert"></p>
+          <button class="botao" type="submit">Calcular rega</button>
+          <div class="resultado-calc" id="resultado-calc" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape-grade">
+        <section>
+          <h3>🌿 Herbário Urbano</h3>
+          <p>Um guia para quem quer transformar o apartamento em um pedacinho de floresta — mesmo sem quintal e sem muito tempo.</p>
+        </section>
+        <nav aria-label="Links do rodapé">
+          <h3>Navegue</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="plantas.html">Catálogo de plantas</a></li>
+            <li><a href="cuidados.html">Guia de cuidados</a></li>
+            <li><a href="contato.html">Contato e dúvidas</a></li>
+          </ul>
+        </nav>
+        <section>
+          <h3>Trabalho prático</h3>
+          <ul>
+            <li>Desenvolvimento Web</li>
+            <li>HTML · CSS · JavaScript</li>
+            <li>Dupla: Lucas Lima e PH</li>
+          </ul>
+        </section>
+      </div>
+      <p class="rodape-base">© <span id="ano-atual">2026</span> Herbário Urbano · Projeto acadêmico sem fins comerciais.</p>
+    </div>
+  </footer>
+
+  <button class="botao-icone voltar-topo" type="button" aria-label="Voltar ao topo">↑</button>
+
+  <script src="js/dados.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cuidados.js"></script>
+</body>
+</html>

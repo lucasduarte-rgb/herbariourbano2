@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guia de plantas para apartamento: catálogo, cuidados e calculadora de rega.">
+  <title>Início | Herbário Urbano</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="cabecalho">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a href="index.html" class="logo">
+        <img src="img/logo.svg" alt="" width="36" height="36">
+        Herbário Urbano
+      </a>
+      <ul class="nav-lista" id="menu">
+          <li><a href="index.html" class="ativo" aria-current="page">Início</a></li>
+          <li><a href="plantas.html">Catálogo</a></li>
+          <li><a href="cuidados.html">Cuidados</a></li>
+          <li><a href="contato.html">Contato</a></li>
+      </ul>
+      <div class="nav-acoes">
+        <button class="botao-icone tema-toggle" type="button" aria-label="Ativar tema escuro">🌙</button>
+        <button class="botao-icone menu-toggle" type="button" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero">
+      <div class="container">
+        <div>
+          <span class="etiqueta">Guia de plantas para apartamento</span>
+          <h1>Leve a natureza para dentro de casa 🌿</h1>
+          <p>Descubra quais plantas combinam com a luz do seu apartamento, aprenda a cuidar delas e nunca mais esqueça a rega.</p>
+          <div class="hero-botoes">
+            <a href="plantas.html" class="botao">Explorar catálogo</a>
+            <a href="cuidados.html" class="botao botao-secundario">Calcular minha rega</a>
+          </div>
+        </div>
+        <div class="hero-estante" aria-hidden="true">
+          <div class="prateleira"></div>
+          <img src="img/costela-de-adao.svg" alt="">
+          <img src="img/espada-de-sao-jorge.svg" alt="">
+          <img src="img/echeveria.svg" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section class="container revelar" aria-label="Números do guia">
+      <div class="numeros">
+        <p><strong id="total-plantas" data-alvo="9">0</strong><span>espécies no catálogo</span></p>
+        <p><strong data-alvo="3">0</strong><span>níveis de luminosidade</span></p>
+        <p><strong data-alvo="4">0</strong><span>estações na calculadora</span></p>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+        <div class="secao-titulo revelar">
+          <span class="etiqueta">Por que ter plantas?</span>
+          <h2>Mais verde, mais bem-estar</h2>
+          <p>Cuidar de plantas é um hobby barato, relaxante e que deixa qualquer cômodo mais bonito.</p>
+        </div>
+        <ul class="grade-cards" style="list-style:none">
+          <li class="card revelar">
+            <div class="card-icone" aria-hidden="true">🧘</div>
+            <h3>Reduz o estresse</h3>
+            <p>A rotina de regar e observar o crescimento ajuda a desacelerar depois de um dia corrido.</p>
+          </li>
+          <li class="card revelar">
+            <div class="card-icone" aria-hidden="true">🛋️</div>
+            <h3>Decora sem gastar muito</h3>
+            <p>Uma muda custa pouco e muda completamente a cara de uma sala, quarto ou escritório.</p>
+          </li>
+          <li class="card revelar">
+            <div class="card-icone" aria-hidden="true">💧</div>
+            <h3>Ar mais agradável</h3>
+            <p>As plantas liberam umidade pelas folhas, deixando o ambiente mais confortável em dias secos.</p>
+          </li>
+          <li class="card revelar">
+            <div class="card-icone" aria-hidden="true">🌱</div>
+            <h3>Ensina paciência</h3>
+            <p>Ver uma folha nova nascer depois de semanas de cuidado é uma recompensa e tanto.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="secao" style="padding-top:0">
+      <div class="container">
+        <div class="secao-titulo">
+          <span class="etiqueta">Sugestão de hoje</span>
+          <h2>Planta do dia</h2>
+        </div>
+        <article class="planta-do-dia" id="planta-do-dia" aria-live="polite">
+          <img src="img/jiboia.svg" alt="Ilustração da planta Jiboia" width="180" height="189">
+          <div>
+            <h3>Jiboia</h3>
+            <p class="nome-cientifico">Epipremnum aureum</p>
+            <p class="descricao">Pendente e muito resistente, perfeita para prateleiras altas.</p>
+            <p class="dica"></p>
+            <button class="botao" id="sortear-planta" type="button">🎲 Sortear outra</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="secao" style="padding-top:0">
+      <div class="container duas-colunas">
+        <div class="revelar">
+          <span class="etiqueta">Como usar o guia</span>
+          <h2>Três passos para começar</h2>
+          <p>Não sabe por onde começar? Siga este roteiro simples:</p>
+        </div>
+        <ol class="lista-passos revelar">
+          <li><p><strong>Observe a luz</strong> do cômodo: bate sol direto, luz filtrada ou quase nenhuma?</p></li>
+          <li><p><strong>Filtre no <a href="plantas.html">catálogo</a></strong> as plantas que combinam com essa luz.</p></li>
+          <li><p><strong>Use a <a href="cuidados.html#calculadora">calculadora de rega</a></strong> para saber quando regar.</p></li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape-grade">
+        <section>
+          <h3>🌿 Herbário Urbano</h3>
+          <p>Um guia para quem quer transformar o apartamento em um pedacinho de floresta — mesmo sem quintal e sem muito tempo.</p>
+        </section>
+        <nav aria-label="Links do rodapé">
+          <h3>Navegue</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="plantas.html">Catálogo de plantas</a></li>
+            <li><a href="cuidados.html">Guia de cuidados</a></li>
+            <li><a href="contato.html">Contato e dúvidas</a></li>
+          </ul>
+        </nav>
+        <section>
+          <h3>Trabalho prático</h3>
+          <ul>
+            <li>Desenvolvimento Web</li>
+            <li>HTML · CSS · JavaScript</li>
+            <li>Dupla: Lucas Lima e PH</li>
+          </ul>
+        </section>
+      </div>
+      <p class="rodape-base">© <span id="ano-atual">2026</span> Herbário Urbano · Projeto acadêmico sem fins comerciais.</p>
+    </div>
+  </footer>
+
+  <button class="botao-icone voltar-topo" type="button" aria-label="Voltar ao topo">↑</button>
+
+  <script src="js/dados.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
