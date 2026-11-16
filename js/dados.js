@@ -101,6 +101,39 @@ const PLANTAS = [
     petFriendly: true,
     descricao: "Folhas listradas que se fecham à noite, como se a planta “rezasse”.",
     dica: "Prefere água filtrada ou de chuva; o cloro pode queimar as pontas das folhas."
+  },
+  {
+    id: "rosa-do-deserto",
+    nome: "Rosa-do-deserto",
+    cientifico: "Adenium obesum",
+    luz: "sol",
+    dificuldade: "media",
+    regaDias: 7,
+    petFriendly: false,
+    descricao: "Caule grosso e escultural, com flores cor-de-rosa que aparecem várias vezes no ano. Uma suculenta que parece um bonsai.",
+    dica: "Quanto mais sol, mais flores. No inverno, regue bem menos: ela entra em repouso e pode perder folhas."
+  },
+  {
+    id: "orquidea",
+    nome: "Orquídea-borboleta",
+    cientifico: "Phalaenopsis sp.",
+    luz: "meia-sombra",
+    dificuldade: "media",
+    regaDias: 7,
+    petFriendly: true,
+    descricao: "A orquídea mais fácil de ter em casa. As flores duram meses e voltam todo ano se ela estiver feliz.",
+    dica: "Regue quando as raízes ficarem prateadas e nunca deixe água parada no vaso."
+  },
+  {
+    id: "babosa",
+    nome: "Babosa",
+    cientifico: "Aloe vera",
+    luz: "sol",
+    dificuldade: "facil",
+    regaDias: 14,
+    petFriendly: false,
+    descricao: "Suculenta de folhas grossas e serrilhadas, cheias de gel. Resistente e ótima para janelas ensolaradas.",
+    dica: "Use vaso de barro e substrato para cactos — o barro ajuda a terra a secar mais rápido."
   }
 ];
 
