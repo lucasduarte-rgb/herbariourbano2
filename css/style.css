@@ -656,3 +656,137 @@ body.tema-escuro .msg-erro { color: #ff8a80; }
 /* Botões de rádio estilizados como "pílulas" na calculadora */
 .calculadora .filtro input { accent-color: var(--verde); }
 .calculadora .filtro:has(input:checked) { background: var(--verde); border-color: var(--verde); color: #fff; }
+
+/* =========================================================
+   9. Novidades: dupla, encomendas e menu com 5 links
+   (bloco acrescentado — nada acima foi alterado)
+   ========================================================= */
+
+/* Menu mobile com um link a mais */
+@media (max-width: 720px) {
+  .nav-lista.aberto { max-height: 400px; }
+}
+
+/* Página inicial: quem somos */
+.dupla {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 300px));
+  justify-content: center;
+  gap: 2rem;
+}
+.pessoa {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 1rem 1rem 1.25rem;
+  text-align: center;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.pessoa:hover { transform: translateY(-4px); box-shadow: var(--sombra); }
+.pessoa img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+/* Página inicial: chamada para encomendas */
+.chamada-encomenda {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: var(--verde-claro);
+  border-radius: var(--raio);
+  padding: 2.5rem;
+}
+.chamada-encomenda .botao { flex-shrink: 0; }
+
+/* Encomendas: como funciona */
+.passos-encomenda {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.passos-encomenda li {
+  background: var(--verde);
+  color: #fff;
+  border-radius: var(--raio);
+  padding: 1.25rem 1.5rem;
+  display: grid;
+  gap: 0.15rem;
+}
+.passos-encomenda strong { font: 700 1.2rem var(--fonte-titulo); }
+.passos-encomenda span { color: #d8eadc; }
+
+/* Encomendas: layout formulário + resumo */
+.layout-encomenda {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2rem;
+  align-items: start;
+}
+.layout-encomenda h2 { font-size: 1.5rem; }
+
+.lista-encomenda { list-style: none; display: grid; gap: 0.6rem; margin: 1.25rem 0 0.5rem; }
+.item-encomenda {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 0.9rem;
+  border: 1.5px solid var(--borda);
+  border-radius: 12px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.item-encomenda.escolhido { border-color: var(--verde); background: var(--verde-claro); }
+.item-encomenda img { width: 56px; flex-shrink: 0; }
+.item-encomenda > div:first-of-type { flex: 1; display: grid; }
+.item-encomenda span { font-size: 0.85rem; color: var(--texto-suave); }
+
+.quantidade { display: flex; align-items: center; gap: 0.5rem; }
+.quantidade output { min-width: 1.6rem; text-align: center; font-weight: 700; }
+
+.opcoes-pilula .filtro input { accent-color: var(--verde); }
+.opcoes-pilula .filtro:has(input:checked) { background: var(--verde); border-color: var(--verde); color: #fff; }
+
+/* Encomendas: resumo do pedido */
+.resumo-encomenda {
+  position: sticky;
+  top: 90px;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 1.5rem;
+  box-shadow: var(--sombra);
+}
+.resumo-encomenda ul { list-style: none; margin: 1rem 0; display: grid; gap: 0.4rem; }
+.resumo-encomenda li { display: flex; justify-content: space-between; gap: 1rem; }
+.resumo-encomenda .resumo-vazio { color: var(--texto-suave); font-size: 0.9rem; }
+.resumo-total {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--borda);
+  padding-top: 0.75rem;
+  margin-bottom: 1rem;
+  color: var(--texto);
+}
+.resumo-encomenda > .botao { width: 100%; justify-content: center; }
+.resumo-encomenda .sucesso-envio .botao { width: 100%; justify-content: center; margin-top: 0.75rem; }
+.resumo-encomenda .sucesso-envio p { margin-top: 0.5rem; }
+
+@media (max-width: 900px) {
+  .layout-encomenda { grid-template-columns: 1fr; }
+  .resumo-encomenda { position: static; }
+}
+
+@media (max-width: 720px) {
+  .dupla { grid-template-columns: minmax(0, 300px); }
+  .chamada-encomenda { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+  .passos-encomenda { grid-template-columns: 1fr; }
+  .item-encomenda { flex-wrap: wrap; }
+}
