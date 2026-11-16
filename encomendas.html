@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Encomende plantas de casa com entrega ou retirada.">
+  <title>Encomendas | Herbário Urbano</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="cabecalho">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a href="index.html" class="logo">
+        <img src="img/logo.svg" alt="" width="36" height="36">
+        Herbário Urbano
+      </a>
+      <ul class="nav-lista" id="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="plantas.html">Catálogo</a></li>
+          <li><a href="cuidados.html">Cuidados</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="encomendas.html" class="ativo" aria-current="page">Encomendas</a></li>
+      </ul>
+      <div class="nav-acoes">
+        <button class="botao-icone tema-toggle" type="button" aria-label="Ativar tema escuro">🌙</button>
+        <button class="botao-icone menu-toggle" type="button" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="pagina-topo container">
+      <span class="etiqueta">Encomendas</span>
+      <h1>Plantas de casa, direto para você 🪴</h1>
+      <p>Monte seu pedido com as plantas do catálogo, escolha o vaso e diga se prefere entrega ou retirada. Respondemos com o orçamento e a data.</p>
+    </section>
+
+    <section class="container revelar" aria-label="Como funciona">
+      <ol class="passos-encomenda">
+        <li><strong>1. Escolha</strong><span>as plantas e a quantidade</span></li>
+        <li><strong>2. Envie</strong><span>o pedido com seus dados</span></li>
+        <li><strong>3. Receba</strong><span>o orçamento e combine a entrega</span></li>
+      </ol>
+    </section>
+
+    <section class="secao" style="padding-top:2.5rem">
+      <form class="container layout-encomenda" id="form-encomenda" novalidate>
+        <div class="form-card">
+          <h2>Escolha as plantas</h2>
+          <p>Use os botões − e + para definir a quantidade de cada uma.</p>
+          <ul class="lista-encomenda" id="lista-encomenda">
+            <noscript><li>Ative o JavaScript para montar seu pedido.</li></noscript>
+          </ul>
+          <p class="msg-erro" id="erro-plantas" role="alert"></p>
+
+          <fieldset class="campo" style="border:none">
+            <legend style="font-weight:600;margin-bottom:.4rem">Tamanho do vaso</legend>
+            <div class="grupo-filtros opcoes-pilula">
+              <label class="filtro"><input type="radio" name="vaso" value="Pequeno"> Pequeno</label>
+              <label class="filtro"><input type="radio" name="vaso" value="Médio" checked> Médio</label>
+              <label class="filtro"><input type="radio" name="vaso" value="Grande"> Grande</label>
+              <label class="filtro"><input type="radio" name="vaso" value="Sem vaso (só a muda)"> Sem vaso</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="campo" style="border:none">
+            <legend style="font-weight:600;margin-bottom:.4rem">Como quer receber?</legend>
+            <div class="grupo-filtros opcoes-pilula">
+              <label class="filtro"><input type="radio" name="recebimento" value="Entrega" checked> 🚚 Entrega</label>
+              <label class="filtro"><input type="radio" name="recebimento" value="Retirada"> 🏠 Retirada</label>
+            </div>
+          </fieldset>
+
+          <h2 style="margin-top:1rem">Seus dados</h2>
+          <div class="campo">
+            <label for="enc-nome">Nome *</label>
+            <input type="text" id="enc-nome" name="nome" autocomplete="name" placeholder="Ex.: Ana Souza">
+            <span class="msg-erro" aria-live="polite"></span>
+          </div>
+          <div class="campo">
+            <label for="enc-telefone">WhatsApp *</label>
+            <input type="tel" id="enc-telefone" name="telefone" autocomplete="tel" placeholder="(11) 98765-4321">
+            <span class="msg-erro" aria-live="polite"></span>
+          </div>
+          <div class="campo" id="campo-endereco">
+            <label for="enc-endereco">Endereço de entrega *</label>
+            <input type="text" id="enc-endereco" name="endereco" autocomplete="street-address" placeholder="Rua, número, bairro e cidade">
+            <span class="msg-erro" aria-live="polite"></span>
+          </div>
+          <div class="campo">
+            <label for="enc-obs">Observações (opcional)</label>
+            <textarea id="enc-obs" name="obs" maxlength="300" placeholder="Ex.: é presente, prefiro entrega à tarde..."></textarea>
+          </div>
+        </div>
+
+        <aside class="resumo-encomenda" aria-live="polite">
+          <h2>Seu pedido</h2>
+          <ul id="resumo-itens"><li class="resumo-vazio">Nenhuma planta escolhida ainda.</li></ul>
+          <p class="resumo-total"><span>Total de plantas</span><strong id="resumo-total">0</strong></p>
+          <button class="botao" type="submit">Enviar pedido</button>
+
+          <div class="sucesso-envio" id="sucesso-encomenda" tabindex="-1">
+            <h3>Pedido recebido! 🌱</h3>
+            <p>Obrigado, <strong id="sucesso-enc-nome"></strong>! Vamos responder pelo WhatsApp com o orçamento.</p>
+            <a class="botao" id="link-whatsapp" href="#" target="_blank" rel="noopener" hidden>Enviar pelo WhatsApp</a>
+            <button class="botao botao-secundario" type="button" id="novo-pedido">Fazer outro pedido</button>
+          </div>
+        </aside>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape-grade">
+        <section>
+          <h3>🌿 Herbário Urbano</h3>
+          <p>Um guia para quem quer transformar o apartamento em um pedacinho de floresta — mesmo sem quintal e sem muito tempo.</p>
+        </section>
+        <nav aria-label="Links do rodapé">
+          <h3>Navegue</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="plantas.html">Catálogo de plantas</a></li>
+            <li><a href="cuidados.html">Guia de cuidados</a></li>
+            <li><a href="contato.html">Contato e dúvidas</a></li>
+            <li><a href="encomendas.html">Encomendar plantas</a></li>
+          </ul>
+        </nav>
+        <section>
+          <h3>Trabalho prático</h3>
+          <ul>
+            <li>Desenvolvimento Web</li>
+            <li>HTML · CSS · JavaScript</li>
+          </ul>
+        </section>
+      </div>
+      <p class="rodape-base">© <span id="ano-atual">2026</span> Herbário Urbano · Projeto acadêmico sem fins comerciais.</p>
+    </div>
+  </footer>
+
+  <button class="botao-icone voltar-topo" type="button" aria-label="Voltar ao topo">↑</button>
+
+  <script src="js/dados.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/encomendas.js"></script>
+</body>
+</html>
